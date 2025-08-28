@@ -1,5 +1,6 @@
 import ProjectCard from "@/components/projectCard";
 import { Project } from "@/types/Project";
+import { useGSAP } from "@gsap/react";
 
 export default async function HomePage() {
   const projects = await fetch("http://localhost:3000/projects.json")
@@ -22,15 +23,18 @@ export default async function HomePage() {
           <li
             key={project.id}
             className="relative flex w-full mb-16 items-center">
+            {/* Timeline dot */}
             <div className="absolute left-1/2 -translate-x-1/2 z-30 flex flex-col items-center">
               <div className="w-4 h-4 rounded-full bg-gray-200 border-2 border-gray-200"></div>
             </div>
 
             {i % 2 === 0 ? (
               <>
+                {/* Card on left */}
                 <div className="w-1/2 flex justify-end pr-8">
                   <ProjectCard project={project} />
                 </div>
+                {/* Description on right */}
                 <div className="w-1/2 pl-8">
                   <h1 className="text-xl font-bold">{project.title}</h1>
                   <p>{project.description}</p>
@@ -39,11 +43,13 @@ export default async function HomePage() {
               </>
             ) : (
               <>
+                {/* Description on left */}
                 <div className="w-1/2 pr-8 text-right">
                   <h1 className="text-xl font-bold">{project.title}</h1>
                   <p>{project.description}</p>
                   <p className="text-sm text-gray-500">{project.date}</p>
                 </div>
+                {/* Card on right */}
                 <div className="w-1/2 flex justify-start pl-8">
                   <ProjectCard project={project} />
                 </div>
