@@ -1,6 +1,5 @@
 import ProjectCard from "@/components/projectCard";
 import { Project } from "@/types/Project";
-import { useGSAP } from "@gsap/react";
 
 export default async function HomePage() {
   const projects = await fetch("http://localhost:3000/projects.json")
@@ -16,7 +15,7 @@ export default async function HomePage() {
     });
 
   return (
-    <div className="absolute -z-10 min-h-screen w-full bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] bg-[size:10px_10px]">
+    <>
       <div className="timeline fixed left-1/2 -translate-x-1/2 w-1 h-screen bg-gray-200 z-10"></div>
       <ul className="relative z-20">
         {projects.map((project: Project, i: number) => (
@@ -58,6 +57,6 @@ export default async function HomePage() {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
