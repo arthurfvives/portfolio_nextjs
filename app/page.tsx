@@ -1,4 +1,4 @@
-import ProjectCard from "@/components/projectCard";
+import ProjectCard from "@/components/projectImage";
 import { Project } from "@/types/Project";
 
 export default async function HomePage() {
