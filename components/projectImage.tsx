@@ -33,6 +33,5 @@ export default function ProjectImage({ project }: ProjectImageProps) {
         </svg>
       </div>
     </Link>
-    //className="w-full h-52 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75"
   );
 }
