@@ -10,14 +10,12 @@ export default async function Page() {
     });
 
   return (
-    <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {projects.map((project: Project) => (
-          <div key={project.id} className="text-center">
-            <ProjectImage project={project} />
-          </div>
-        ))}
-      </div>
+    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+      {projects.map((project: Project) => (
+        <div key={project.id} className="break-inside-avoid mb-4">
+          <ProjectImage project={project} />
+        </div>
+      ))}
     </div>
   );
 }
